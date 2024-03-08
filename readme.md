@@ -9,6 +9,7 @@
 classDiagram
     Dashboard <|-- Control
     Dashboard <|-- Bill
+    Form1 -- Dashboard
     class Bill{
         -Datetime datetime
         -StringBuilder content
