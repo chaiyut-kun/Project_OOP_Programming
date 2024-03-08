@@ -5,7 +5,7 @@
 เป็นตัวช่วยการขายให้กับผู้ค้าของร้านชานมไข่มุก
 
 ### โครงสร้างของโปรแกรม
-
+```mermaid
 classDiagram
     Dashboard <|-- Control
     Dashboard <|-- Bill
