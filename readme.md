@@ -7,10 +7,8 @@
 ### โครงสร้างของโปรแกรม
 
 classDiagram
-    
     Dashboard <|-- Control
     Dashboard <|-- Bill
-    
     class Bill{
         -Datetime datetime
         -StringBuilder content
@@ -26,7 +24,6 @@ classDiagram
         -int[] menu_price
         #String[] menu_name
         -List<int> all_price
-
         +Menu_THA() 
         +Menu() 
         +Menu_name() 
@@ -58,7 +55,6 @@ class Form1{
     -int pay
     -bool can
     -bool change_lang
-
     +Fom1()
     -Get_label() 
     -Get_picture() 
