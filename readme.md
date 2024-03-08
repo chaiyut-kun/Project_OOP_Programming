@@ -81,6 +81,7 @@ class Form1{
     -Show_layer2(bool visible) 
     -Mange_bill() 
 } 
+```
 
 ### ผู้พัฒนาโปรแกรม
 นายชัยยุตม์ ถาวร 663450037-1
