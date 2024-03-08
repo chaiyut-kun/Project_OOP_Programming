@@ -25,16 +25,16 @@ namespace WindowsFormsApp1
             Show_layer2(false);
         }
     //asset
-        Dashboard dashboard = new Dashboard();
-        Bill bill = new Bill();
-        Control control = new Control();
-        Label[] all_m , label_layer1 ;
-        // all pic เอาไว้สำหรับ เก็บ obj ของรูปภาพ layer 1 
-        PictureBox[] all_pic , pic_layer2;
-        List<string> new_orders = new List<string>();
-        string[] orders = new string[] {"" , "" , "", ""};
-        int pay;
-        bool can , change_lang = false;
+        private Dashboard dashboard = new Dashboard();
+        private Bill bill = new Bill();
+        private Control control = new Control();
+        private Label[] all_m , label_layer1 ;
+         // all pic เอาไว้สำหรับ เก็บ obj ของรูปภาพ layer 1 
+        private PictureBox[] all_pic , pic_layer2;
+        private List<string> new_orders = new List<string>();
+        private string[] orders = new string[] {"" , "" , "", ""};
+        private int pay;
+        private bool can , change_lang = false;
         
 
 
@@ -45,7 +45,7 @@ namespace WindowsFormsApp1
         }
         private PictureBox[] Get_picture()
         {
-            all_pic = new PictureBox[] {Menu1 , Menu2 , Menu3  , Menu4 , Result_pic , PriceAll_pic , Summit_result };
+            all_pic = new PictureBox[] {Menu1 , Menu2 , Menu3  , Menu4 , Result_pic , PriceAll_pic , Summit_result , Bill_pic};
             return all_pic;
         }
         private bool Check_index(int index)
@@ -69,8 +69,8 @@ namespace WindowsFormsApp1
             //Reset value of count menu
             Get_Label()[index].Text = dashboard.Count_menu[index].ToString();
             //Increase sum of menu
-            dashboard.All_price = dashboard.Menu_price[index];
-            orders[index] = dashboard.menu_name[index];
+            dashboard.Increase_value(dashboard.Menu_price[index]);
+            orders[index] = dashboard.Menu_name[index];
             //Reset total price
             Re_price();
 
@@ -107,7 +107,7 @@ namespace WindowsFormsApp1
         {
             Allprice_change_label.Text = dashboard.All_price.ToString();
         }
-        private void Mange_pic(bool change)
+        private void Manage_pic(bool change)
         {
            
             // if change = TO _eng
@@ -119,6 +119,7 @@ namespace WindowsFormsApp1
                 {
                     Get_picture()[i].Image = dashboard.Menu[i];
                 }
+                Datetime_order.Location = new Point(Datetime_order.Location.X + 31, Datetime_order.Location.Y);
             }
             else
             {
@@ -128,28 +129,14 @@ namespace WindowsFormsApp1
                 {
                     Get_picture()[i].Image = dashboard.Menu_THA[i];
                 }
+                Datetime_order.Location = new Point(Datetime_order.Location.X - 31, Datetime_order.Location.Y);
             }
-        }
-        private void to_eng(bool change)
-        {
-            Mange_pic(change);
-
-        }
-        private void to_tha(bool change)
-        {
-            Mange_pic(change);
         }
         private void Language_Click(object sender, EventArgs e)
         {
             change_lang = !change_lang;
-            if (change_lang)
-            {
-                to_eng(change_lang);   
-            }
-            else
-            {
-                to_tha(change_lang);
-            }
+            
+            Manage_pic(change_lang);
         }
     //end asset 
 
@@ -193,9 +180,9 @@ namespace WindowsFormsApp1
             Show_layer2(false);
             Show_layer1(true);
         }
-        private void Save_CSV_Click(object sender, EventArgs e)
+        private void Save_CSV_Click(object sender, EventArgs e) 
         {
-            if (!bill.Write_file(new_orders, dashboard.All_price, Recieve_Box.Text , Change_label.Text , Datetime_order.Text , Queue_order.Text))
+            if (!bill.Write_file(new_orders, dashboard.All_price , Recieve_Box.Text , Change_label.Text ))
             {
                 MessageBox.Show("การเขียนไฟล์เกิดปัญหา", "ไม่สามารถเขียนไฟล์ได้");
             }
@@ -222,7 +209,7 @@ namespace WindowsFormsApp1
                 Show_layer2(true);
                 Mange_bill();
                 
-                Queue_order.Text = (dashboard.getCurrent_queue()+1).ToString();
+                Queue_order.Text = (bill.getCurrent_queue()+1).ToString();
                 Datetime_order.Text = string.Format("{0} : {1}", bill.Get_now().ToString("dd/MM/yyyy"), bill.Get_now().ToString("H:mm:ss"));
             }
             
@@ -253,7 +240,7 @@ namespace WindowsFormsApp1
         }
         private void Mange_bill()
         {
-            List<string> new_orders = orders.Where(v => v != "").ToList();
+            new_orders = orders.Where(v => v != "").ToList();
             List<int> indexing = new List<int>();
             foreach (string d in new_orders)
             {

@@ -9,39 +9,28 @@ using WindowsFormsApp1;
 
 namespace Service
 {
-    internal class Bill 
+    public class Bill : Dashboard
     {
-        private string queue;
         private DateTime datetime = new DateTime();
-        protected List<int> all_price = new List<int>();
         private StringBuilder content = new StringBuilder();
         private string path = @"D:\Programming\C#\Project\service Program\WindowsFormsApp1\Data.csv";
 
-        // all_price property
-        public int All_price 
-        { 
-            get => all_price.Sum();
-            set => all_price.Add(value);
-        }
-
-        //ลบ ค่าราคาเมื่อเรียกใช้ ฟังก์ชันนี้
-        public void Decrease_value(int price)
-        {
-             all_price.Remove(price);
-        }
+        //method
         //ฟังก์ชันจะคืนค่าเวลาณปัจจุบัน
         public DateTime Get_now()
         {
-            return DateTime.Now;
+            datetime = DateTime.Now;
+            return datetime;
         }
-
-        public bool Write_file(List<string> menu , int total , string receive , string change , string datetime , string queue )
+        //ฟังก์ชันสำหรับเขียนไฟล์
+        public bool Write_file(List<string> menu, int total , string receive , string change )
         {
             for (int i = 0; i < menu.Count; i++)
             {
-                content.Append(string.Format("{0} ,", menu[i]));
+                content.Append(string.Format("{0} :", menu[i]));
             }
-            content.Append(string.Format("{0} , {1} , {2} , {3} , {4}\n",total , receive , change , datetime , queue));
+            content.Append(string.Format(",{0} , {1} , {2} , {3} , {4}\n", total, receive, change, $"{this.datetime.ToString("dd/MM/yyyy")} : {this.datetime.ToString("HH/mm/ss")}", this.getCurrent_queue() + 1));
+
             try
             {
                 File.AppendAllText(path, content.ToString());
@@ -52,7 +41,7 @@ namespace Service
                 return false;
             }
         }
-        
+        //ฟังก์ชันคืนค่า คิวล่าสุด
         public int getCurrent_queue()
         {
             string[] content = File.ReadAllLines(path);
@@ -60,5 +49,6 @@ namespace Service
             return current;
             
         }
+
     }
 }

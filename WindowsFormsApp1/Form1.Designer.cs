@@ -55,9 +55,12 @@
             this.Bill_total3 = new System.Windows.Forms.Label();
             this.Bill_total4 = new System.Windows.Forms.Label();
             this.Group_Bill = new System.Windows.Forms.GroupBox();
-            this.Bill_total_result = new System.Windows.Forms.Label();
-            this.Recieve_label = new System.Windows.Forms.Label();
+            this.Queue_order = new System.Windows.Forms.Label();
+            this.Datetime_order = new System.Windows.Forms.Label();
             this.Change_label = new System.Windows.Forms.Label();
+            this.Recieve_label = new System.Windows.Forms.Label();
+            this.Bill_total_result = new System.Windows.Forms.Label();
+            this.Bill_pic = new System.Windows.Forms.PictureBox();
             this.Menu3 = new System.Windows.Forms.PictureBox();
             this.Menu4 = new System.Windows.Forms.PictureBox();
             this.Menu2 = new System.Windows.Forms.PictureBox();
@@ -68,12 +71,10 @@
             this.Result_pic = new System.Windows.Forms.PictureBox();
             this.Summit_result = new System.Windows.Forms.PictureBox();
             this.Save_csv = new System.Windows.Forms.PictureBox();
-            this.Bill_pic = new System.Windows.Forms.PictureBox();
             this.Recieve_Box = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.Datetime_order = new System.Windows.Forms.Label();
-            this.Queue_order = new System.Windows.Forms.Label();
             this.Group_Bill.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Bill_pic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Menu3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Menu4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Menu2)).BeginInit();
@@ -84,7 +85,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Result_pic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Summit_result)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Save_csv)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Bill_pic)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -399,15 +399,35 @@
             this.Group_Bill.TabIndex = 4;
             this.Group_Bill.TabStop = false;
             // 
-            // Bill_total_result
+            // Queue_order
             // 
-            this.Bill_total_result.AutoSize = true;
-            this.Bill_total_result.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Bill_total_result.Location = new System.Drawing.Point(506, 495);
-            this.Bill_total_result.Name = "Bill_total_result";
-            this.Bill_total_result.Size = new System.Drawing.Size(65, 29);
-            this.Bill_total_result.TabIndex = 1;
-            this.Bill_total_result.Text = "ENG";
+            this.Queue_order.AutoSize = true;
+            this.Queue_order.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Queue_order.Location = new System.Drawing.Point(352, 155);
+            this.Queue_order.Name = "Queue_order";
+            this.Queue_order.Size = new System.Drawing.Size(26, 39);
+            this.Queue_order.TabIndex = 1;
+            this.Queue_order.Text = " ";
+            // 
+            // Datetime_order
+            // 
+            this.Datetime_order.AutoSize = true;
+            this.Datetime_order.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Datetime_order.Location = new System.Drawing.Point(269, 212);
+            this.Datetime_order.Name = "Datetime_order";
+            this.Datetime_order.Size = new System.Drawing.Size(14, 20);
+            this.Datetime_order.TabIndex = 1;
+            this.Datetime_order.Text = " ";
+            // 
+            // Change_label
+            // 
+            this.Change_label.AutoSize = true;
+            this.Change_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Change_label.Location = new System.Drawing.Point(506, 593);
+            this.Change_label.Name = "Change_label";
+            this.Change_label.Size = new System.Drawing.Size(65, 29);
+            this.Change_label.TabIndex = 1;
+            this.Change_label.Text = "ENG";
             // 
             // Recieve_label
             // 
@@ -419,15 +439,25 @@
             this.Recieve_label.TabIndex = 1;
             this.Recieve_label.Text = "ENG";
             // 
-            // Change_label
+            // Bill_total_result
             // 
-            this.Change_label.AutoSize = true;
-            this.Change_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Change_label.Location = new System.Drawing.Point(506, 593);
-            this.Change_label.Name = "Change_label";
-            this.Change_label.Size = new System.Drawing.Size(65, 29);
-            this.Change_label.TabIndex = 1;
-            this.Change_label.Text = "ENG";
+            this.Bill_total_result.AutoSize = true;
+            this.Bill_total_result.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Bill_total_result.Location = new System.Drawing.Point(506, 495);
+            this.Bill_total_result.Name = "Bill_total_result";
+            this.Bill_total_result.Size = new System.Drawing.Size(65, 29);
+            this.Bill_total_result.TabIndex = 1;
+            this.Bill_total_result.Text = "ENG";
+            // 
+            // Bill_pic
+            // 
+            this.Bill_pic.Image = global::WindowsFormsApp1.Properties.Resources.Bill_THA;
+            this.Bill_pic.Location = new System.Drawing.Point(6, 21);
+            this.Bill_pic.Name = "Bill_pic";
+            this.Bill_pic.Size = new System.Drawing.Size(632, 640);
+            this.Bill_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Bill_pic.TabIndex = 3;
+            this.Bill_pic.TabStop = false;
             // 
             // Menu3
             // 
@@ -537,16 +567,6 @@
             this.Save_csv.TabStop = false;
             this.Save_csv.Click += new System.EventHandler(this.Save_CSV_Click);
             // 
-            // Bill_pic
-            // 
-            this.Bill_pic.Image = global::WindowsFormsApp1.Properties.Resources.Bill_THA;
-            this.Bill_pic.Location = new System.Drawing.Point(6, 21);
-            this.Bill_pic.Name = "Bill_pic";
-            this.Bill_pic.Size = new System.Drawing.Size(632, 640);
-            this.Bill_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Bill_pic.TabIndex = 3;
-            this.Bill_pic.TabStop = false;
-            // 
             // Recieve_Box
             // 
             this.Recieve_Box.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -564,26 +584,6 @@
             this.label2.Size = new System.Drawing.Size(309, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "จำนวนเงินที่รับมา (กรุณาป้อนเป็นจำนวนเต็ม)";
-            // 
-            // Datetime_order
-            // 
-            this.Datetime_order.AutoSize = true;
-            this.Datetime_order.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Datetime_order.Location = new System.Drawing.Point(269, 216);
-            this.Datetime_order.Name = "Datetime_order";
-            this.Datetime_order.Size = new System.Drawing.Size(14, 20);
-            this.Datetime_order.TabIndex = 1;
-            this.Datetime_order.Text = " ";
-            // 
-            // Queue_order
-            // 
-            this.Queue_order.AutoSize = true;
-            this.Queue_order.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Queue_order.Location = new System.Drawing.Point(352, 160);
-            this.Queue_order.Name = "Queue_order";
-            this.Queue_order.Size = new System.Drawing.Size(14, 20);
-            this.Queue_order.TabIndex = 1;
-            this.Queue_order.Text = " ";
             // 
             // Form1
             // 
@@ -618,6 +618,7 @@
             this.Text = "Form1";
             this.Group_Bill.ResumeLayout(false);
             this.Group_Bill.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Bill_pic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Menu3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Menu4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Menu2)).EndInit();
@@ -628,7 +629,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Result_pic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Summit_result)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Save_csv)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Bill_pic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

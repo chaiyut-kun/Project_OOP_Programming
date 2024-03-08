@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public class Control
+    public class Control : Dashboard
     {
-        public int change = 0;
+        private int change = 0;
         public int Change(int price , int pay)
         {
             return change;
@@ -31,20 +31,12 @@ namespace WindowsFormsApp1
         }
         public bool index_check(int index)
         {
-            if (index >= 0 && index < 4)
+            if (index >= 0 && index < menu_price.Length)
             {
                 return true;
             }
             return false;
         }
-
-        public bool index_check(int index, object[] arr)
-        {
-            if (index >= arr.Length && index <= 0)
-            {
-                return true;
-            }
-            return false;
-        }
+        
     }
 }
