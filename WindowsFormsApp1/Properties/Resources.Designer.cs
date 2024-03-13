@@ -103,6 +103,16 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Previous_page {
+            get {
+                object obj = ResourceManager.GetObject("Previous_page", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Previous_page_tha {
             get {
                 object obj = ResourceManager.GetObject("Previous_page_tha", resourceCulture);
@@ -166,6 +176,16 @@ namespace WindowsFormsApp1.Properties {
         internal static System.Drawing.Bitmap Result1 {
             get {
                 object obj = ResourceManager.GetObject("Result1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Save_CSV {
+            get {
+                object obj = ResourceManager.GetObject("Save_CSV", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
+using System.Windows.Forms;
 using WindowsFormsApp1;
 
 namespace Service
@@ -30,6 +31,16 @@ namespace Service
                 content.Append(string.Format("{0} :", menu[i]));
             }
             content.Append(string.Format(",{0} , {1} , {2} , {3} , {4}\n", total, receive, change, $"{this.datetime.ToString("dd/MM/yyyy")} : {this.datetime.ToString("HH/mm/ss")}", this.getCurrent_queue() + 1));
+
+
+            string save_data =  total + "," + receive + "," + change;
+            
+            string save_csv = string.Format("{0} , {1} , {2} ", total, receive, change);
+
+
+
+
+
 
             try
             {

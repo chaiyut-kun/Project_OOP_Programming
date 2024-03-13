@@ -14,10 +14,12 @@ namespace WindowsFormsApp1
     {
         // field
         private Image[] menu_THA = {Properties.Resources.Task1 , Properties.Resources.Task2 ,
-            Properties.Resources.Task3 , Properties.Resources.Task4 , Properties.Resources.Result1 , Properties.Resources.price_all , Properties.Resources.Summit , Properties.Resources.Bill_THA
+            Properties.Resources.Task3 , Properties.Resources.Task4 , Properties.Resources.Result1 , Properties.Resources.price_all ,
+            Properties.Resources.Summit , Properties.Resources.Bill_THA , Properties.Resources.Previous_page_tha , Properties.Resources.Save_csv_tha
         };
         private Image[] menu = { Properties.Resources.Task1_eng , Properties.Resources.Task2_eng , Properties.Resources.Task3_eng
-                , Properties.Resources.Task4_eng , Properties.Resources.Result_eng  , Properties.Resources.price_all_eng , Properties.Resources.Result_ , Properties.Resources.Bill_Eng
+                , Properties.Resources.Task4_eng , Properties.Resources.Result_eng  , Properties.Resources.price_all_eng , Properties.Resources.Result_ ,
+            Properties.Resources.Bill_Eng , Properties.Resources.Previous_page , Properties.Resources.Save_CSV
         }; 
         private int[] count_menu = new int[4];
         private string[] menu_name = { "Cocoa  Frappe", "Chocolate Frappe", "Iced green tea", "Iced milk tea" };

@@ -60,7 +60,8 @@
             this.Change_label = new System.Windows.Forms.Label();
             this.Recieve_label = new System.Windows.Forms.Label();
             this.Bill_total_result = new System.Windows.Forms.Label();
-            this.Bill_pic = new System.Windows.Forms.PictureBox();
+            this.Recieve_Box = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.Menu3 = new System.Windows.Forms.PictureBox();
             this.Menu4 = new System.Windows.Forms.PictureBox();
             this.Menu2 = new System.Windows.Forms.PictureBox();
@@ -71,10 +72,8 @@
             this.Result_pic = new System.Windows.Forms.PictureBox();
             this.Summit_result = new System.Windows.Forms.PictureBox();
             this.Save_csv = new System.Windows.Forms.PictureBox();
-            this.Recieve_Box = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.Bill_pic = new System.Windows.Forms.PictureBox();
             this.Group_Bill.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Bill_pic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Menu3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Menu4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Menu2)).BeginInit();
@@ -85,6 +84,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Result_pic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Summit_result)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Save_csv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Bill_pic)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -405,7 +405,7 @@
             this.Queue_order.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Queue_order.Location = new System.Drawing.Point(352, 155);
             this.Queue_order.Name = "Queue_order";
-            this.Queue_order.Size = new System.Drawing.Size(26, 39);
+            this.Queue_order.Size = new System.Drawing.Size(26, 38);
             this.Queue_order.TabIndex = 1;
             this.Queue_order.Text = " ";
             // 
@@ -449,15 +449,23 @@
             this.Bill_total_result.TabIndex = 1;
             this.Bill_total_result.Text = "ENG";
             // 
-            // Bill_pic
+            // Recieve_Box
             // 
-            this.Bill_pic.Image = global::WindowsFormsApp1.Properties.Resources.Bill_THA;
-            this.Bill_pic.Location = new System.Drawing.Point(6, 21);
-            this.Bill_pic.Name = "Bill_pic";
-            this.Bill_pic.Size = new System.Drawing.Size(632, 640);
-            this.Bill_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Bill_pic.TabIndex = 3;
-            this.Bill_pic.TabStop = false;
+            this.Recieve_Box.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Recieve_Box.Location = new System.Drawing.Point(969, 502);
+            this.Recieve_Box.Name = "Recieve_Box";
+            this.Recieve_Box.Size = new System.Drawing.Size(216, 38);
+            this.Recieve_Box.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(966, 479);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(309, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "จำนวนเงินที่รับมา (กรุณาป้อนเป็นจำนวนเต็ม)";
             // 
             // Menu3
             // 
@@ -567,23 +575,15 @@
             this.Save_csv.TabStop = false;
             this.Save_csv.Click += new System.EventHandler(this.Save_CSV_Click);
             // 
-            // Recieve_Box
+            // Bill_pic
             // 
-            this.Recieve_Box.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Recieve_Box.Location = new System.Drawing.Point(969, 502);
-            this.Recieve_Box.Name = "Recieve_Box";
-            this.Recieve_Box.Size = new System.Drawing.Size(216, 38);
-            this.Recieve_Box.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(966, 479);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(309, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "จำนวนเงินที่รับมา (กรุณาป้อนเป็นจำนวนเต็ม)";
+            this.Bill_pic.Image = global::WindowsFormsApp1.Properties.Resources.Bill_THA;
+            this.Bill_pic.Location = new System.Drawing.Point(6, 20);
+            this.Bill_pic.Name = "Bill_pic";
+            this.Bill_pic.Size = new System.Drawing.Size(632, 640);
+            this.Bill_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Bill_pic.TabIndex = 3;
+            this.Bill_pic.TabStop = false;
             // 
             // Form1
             // 
@@ -592,7 +592,6 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1360, 711);
             this.Controls.Add(this.Recieve_Box);
-            this.Controls.Add(this.Group_Bill);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Menu3);
             this.Controls.Add(this.Menu4);
@@ -614,11 +613,11 @@
             this.Controls.Add(this.Result_pic);
             this.Controls.Add(this.Summit_result);
             this.Controls.Add(this.Save_csv);
+            this.Controls.Add(this.Group_Bill);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Group_Bill.ResumeLayout(false);
             this.Group_Bill.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Bill_pic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Menu3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Menu4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Menu2)).EndInit();
@@ -629,34 +628,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.Result_pic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Summit_result)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Save_csv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Bill_pic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox Language_pic;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label Allprice_change_label;
-        private System.Windows.Forms.PictureBox Menu1;
-        private System.Windows.Forms.PictureBox Menu2;
-        private System.Windows.Forms.PictureBox Menu4;
-        private System.Windows.Forms.PictureBox Menu3;
-        private System.Windows.Forms.Label First_m;
-        private System.Windows.Forms.Label Sec_m;
-        private System.Windows.Forms.Label Third_m;
-        private System.Windows.Forms.Label Fourth_m;
-        private System.Windows.Forms.PictureBox Result_pic;
-        private System.Windows.Forms.PictureBox PriceAll_pic;
-        private System.Windows.Forms.PictureBox Summit_result;
         private System.Windows.Forms.Label First_D;
         private System.Windows.Forms.Label Sec_D;
         private System.Windows.Forms.Label Third_D;
         private System.Windows.Forms.Label Fourth_D;
-        private System.Windows.Forms.PictureBox Save_csv;
-        private System.Windows.Forms.PictureBox Previous_page;
-        private System.Windows.Forms.PictureBox Bill_pic;
         private System.Windows.Forms.Label Bill_menu1;
         private System.Windows.Forms.Label Bill_menu2;
         private System.Windows.Forms.Label Bill_menu3;
@@ -673,14 +655,31 @@
         private System.Windows.Forms.Label Bill_total2;
         private System.Windows.Forms.Label Bill_total3;
         private System.Windows.Forms.Label Bill_total4;
-        private System.Windows.Forms.GroupBox Group_Bill;
         private System.Windows.Forms.Label Change_label;
         private System.Windows.Forms.Label Recieve_label;
         private System.Windows.Forms.Label Bill_total_result;
         private System.Windows.Forms.TextBox Recieve_Box;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label Queue_order;
-        private System.Windows.Forms.Label Datetime_order;
+        protected System.Windows.Forms.PictureBox Save_csv;
+        protected System.Windows.Forms.Label label1;
+        protected System.Windows.Forms.Label Allprice_change_label;
+        protected System.Windows.Forms.Label First_m;
+        protected System.Windows.Forms.Label Sec_m;
+        protected System.Windows.Forms.Label Third_m;
+        protected System.Windows.Forms.Label Fourth_m;
+        protected System.Windows.Forms.Label Queue_order;
+        protected System.Windows.Forms.Label Datetime_order;
+        public System.Windows.Forms.PictureBox Language_pic;
+        public System.Windows.Forms.PictureBox Menu1;
+        public System.Windows.Forms.PictureBox Menu4;
+        public System.Windows.Forms.PictureBox Menu3;
+        public System.Windows.Forms.PictureBox Result_pic;
+        public System.Windows.Forms.PictureBox PriceAll_pic;
+        public System.Windows.Forms.PictureBox Bill_pic;
+        public System.Windows.Forms.GroupBox Group_Bill;
+        public System.Windows.Forms.PictureBox Previous_page;
+        public System.Windows.Forms.PictureBox Menu2;
+        public System.Windows.Forms.PictureBox Summit_result;
     }
 }
 

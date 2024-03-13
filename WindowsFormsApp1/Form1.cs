@@ -28,46 +28,40 @@ namespace WindowsFormsApp1
         private Dashboard dashboard = new Dashboard();
         private Bill bill = new Bill();
         private Control control = new Control();
-        private Label[] all_m , label_layer1 ;
+        private Label[]  label_layer1 , all_m;
          // all pic เอาไว้สำหรับ เก็บ obj ของรูปภาพ layer 1 
-        private PictureBox[] all_pic , pic_layer2;
+        private PictureBox[] pic_layer2 , all_pic;
         private List<string> new_orders = new List<string>();
         private string[] orders = new string[] {"" , "" , "", ""};
         private int pay;
         private bool can , change_lang = false;
-        
 
 
-        private Label[] Get_Label()
+
+        private Label[] Get_label()
         {
             all_m = new Label[] { First_m, Sec_m, Third_m, Fourth_m };
             return all_m;
         }
         private PictureBox[] Get_picture()
         {
-            all_pic = new PictureBox[] {Menu1 , Menu2 , Menu3  , Menu4 , Result_pic , PriceAll_pic , Summit_result , Bill_pic};
+            all_pic = new PictureBox[] { Menu1, Menu2, Menu3, Menu4, Result_pic, PriceAll_pic, Summit_result, Bill_pic , Previous_page , Save_csv};
             return all_pic;
-        }
-        private bool Check_index(int index)
-        {
-            can = control.index_check(index);
-            if (!can)
-            {
-                MessageBox.Show("โปรแกรมมีปัญหา");
-                return false;
-            }
-            return true;
         }
         private void Manage_In(int index)
         {
-            if (!Check_index(index))
+
+            can = control.index_check(index);
+            if (!can)
             {
+
+                MessageBox.Show("Program is Error");
                 return;
             }
             //Increase count of menu 
             dashboard.Increase(index);
             //Reset value of count menu
-            Get_Label()[index].Text = dashboard.Count_menu[index].ToString();
+            Get_label()[index].Text = dashboard.Count_menu[index].ToString();
             //Increase sum of menu
             dashboard.Increase_value(dashboard.Menu_price[index]);
             orders[index] = dashboard.Menu_name[index];
@@ -86,14 +80,16 @@ namespace WindowsFormsApp1
         }
         private void Manage_De(int index)
         {
-            if (!Check_index(index))
+            can = control.index_check(index);
+            if (!can)
             {
+                MessageBox.Show("Program is Error");
                 return;
             }
             //Decrease count of menu 
             dashboard.Decrease(index);
             //Reset value of count menu
-            Get_Label()[index].Text = dashboard.Count_menu[index].ToString();
+            Get_label()[index].Text = dashboard.Count_menu[index].ToString();
             //Decrease sum of menu
             dashboard.Decrease_value(dashboard.Menu_price[index]);
             //Reset total price
@@ -109,7 +105,7 @@ namespace WindowsFormsApp1
         }
         private void Manage_pic(bool change)
         {
-           
+
             // if change = TO _eng
             if (change)
             {
@@ -177,8 +173,8 @@ namespace WindowsFormsApp1
         }
         private void Previous_page_Click(object sender, EventArgs e)
         {
-            Show_layer2(false);
             Show_layer1(true);
+            Show_layer2(false);
         }
         private void Save_CSV_Click(object sender, EventArgs e) 
         {
@@ -227,7 +223,7 @@ namespace WindowsFormsApp1
             {
                 la.Visible = visible;
             }*/
-            Array.ForEach(Get_Label().Concat(label_layer1).ToArray(), label => { label.Visible = visible; });
+            Array.ForEach(Get_label().Concat(label_layer1).ToArray(), label => { label.Visible = visible; });
             Recieve_Box.Visible = visible;
             label2.Visible = visible;
         }
@@ -237,6 +233,7 @@ namespace WindowsFormsApp1
             Group_Bill.Visible = visible;
             Bill_pic.Visible = visible;
             Array.ForEach(pic_layer2 , pic => { pic.Visible = visible; }); 
+           
         }
         private void Mange_bill()
         {
@@ -272,5 +269,6 @@ namespace WindowsFormsApp1
             }
         }
     }
+
 }
 
